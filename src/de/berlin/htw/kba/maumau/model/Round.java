@@ -1,4 +1,4 @@
-package de.htw_berlin.kba.maumau.model;
+package de.berlin.htw.kba.maumau.model;
 
 import java.util.LinkedList;
 

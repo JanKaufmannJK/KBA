@@ -1,6 +1,6 @@
-package de.htw_berlin.kba.maumau;
+package de.berlin.htw.kba.maumau;
 
-import de.htw_berlin.kba.maumau.model.Stack;
+import de.berlin.htw.kba.maumau.model.Stack;
 
 // main
 public class Main {
