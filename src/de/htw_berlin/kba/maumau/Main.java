@@ -2,6 +2,7 @@ package de.htw_berlin.kba.maumau;
 
 import de.htw_berlin.kba.maumau.model.Stack;
 
+// main
 public class Main {
 
     public static void main(String[] args) {
