@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Stack {
 
-    LinkedList<Card> deck = new LinkedList<>();
+    private LinkedList<Card> deck = new LinkedList<>();
 
     public Stack() {
 
@@ -20,6 +20,19 @@ public class Stack {
 
     public int amountOfCards() {
         return deck.size();
+    }
+
+    public String getCardsOfDeck() {
+
+        String temp = "";
+
+        for (Card card : deck) {
+            //System.out.println(card.getSuit());
+            //System.out.println(card.getRank());
+            temp = temp + card.getSuit() + "|" + card.getRank() + "\r\n";
+        }
+
+        return temp;
     }
 
 }

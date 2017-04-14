@@ -2,6 +2,7 @@ package de.berlin.htw.kba.maumau.engine;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import de.berlin.htw.kba.maumau.model.Card;
@@ -16,16 +17,16 @@ public class MauMasterImpl implements MauMaster {
     public Stack initDeck(Stack stack)  {
 
         //auslagern als enum
-        List<String> suits = new ArrayList<>(Arrays.asList("Herz", "Karo", "Kreuz", "Pik"));
+        List<String> suits = new ArrayList<>(Arrays.asList("Heart", "Diamond", "Club", "Spade"));
 
         //auslagern als enum
-        List<String> ranks = new ArrayList<>(Arrays.asList("7","8","9","10","Bube","Dame","König","Ass"));
+        List<String> ranks = new ArrayList<>(Arrays.asList("7","8","9","10","Jack","Queen","King","Ace"));
 
         for (String suit : suits) {
             for (String rank : ranks) {
                 Card card = new Card(suit,rank);
                 stack.getDeck().add(card);
-                System.out.println("Card " + card.getSuit() + "|" + card.getRank() + " zum Stack hinzugefügt...");
+                System.out.println("Card " + card.getSuit() + "|" + card.getRank() + " added to Stack...");
             }
         }
         return stack;
@@ -33,8 +34,21 @@ public class MauMasterImpl implements MauMaster {
 
     @Override
     public Stack shuffleDeck(Stack stack) {
+
+        LinkedList<Card> temp = new LinkedList<>();
+
+        while ( stack.amountOfCards() > 0 ) {
+            int loc = (int) ( Math.random() * stack.amountOfCards() );
+            temp.add(stack.getDeck().get(loc));
+            stack.getDeck().remove(loc);
+        }
+
+        stack.setDeck(temp);
+
         return stack;
     }
+
+
 
 //    public Card getCardFromDeck() {
 //        Card temp = this.deck.getFirst();
