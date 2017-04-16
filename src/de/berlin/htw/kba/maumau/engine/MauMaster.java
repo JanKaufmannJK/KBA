@@ -8,5 +8,7 @@ public interface MauMaster {
     Stack initDeck(Stack stack);
 
     Stack shuffleDeck(Stack stack);
+    
+    void showCards(Stack stack);
 
 }

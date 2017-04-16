@@ -6,6 +6,8 @@ import de.berlin.htw.kba.maumau.model.Stack;
 
 
 public class Main {
+	
+	//private MauMaster mauMaster;
 
     public static void main(String[] args) {
 
@@ -16,14 +18,13 @@ public class Main {
 
         mauMaster.initDeck(stack);
 
-        System.out.println(stack.getCardsOfDeck());
+        mauMaster.showCards(stack);
         System.out.println("Anzahl der Karten im Stack: " + stack.amountOfCards());
 
         mauMaster.shuffleDeck(stack);
 
-        System.out.println(stack.getCardsOfDeck());
+        mauMaster.showCards(stack);
         System.out.println("Anzahl der Karten im Stack: " + stack.amountOfCards());
-
 
     }
 }

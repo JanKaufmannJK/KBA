@@ -4,35 +4,22 @@ import java.util.LinkedList;
 
 public class Stack {
 
-    private LinkedList<Card> deck = new LinkedList<>();
+    private LinkedList<Card> stack = new LinkedList<>();
 
     public Stack() {
 
     }
 
     public LinkedList<Card> getDeck() {
-        return deck;
+        return stack;
     }
 
     public void setDeck(LinkedList<Card> deck) {
-        this.deck = deck;
+        this.stack = deck;
     }
 
     public int amountOfCards() {
-        return deck.size();
-    }
-
-    public String getCardsOfDeck() {
-
-        String temp = "";
-
-        for (Card card : deck) {
-            //System.out.println(card.getSuit());
-            //System.out.println(card.getRank());
-            temp = temp + card.getSuit() + "|" + card.getRank() + "\r\n";
-        }
-
-        return temp;
+        return stack.size();
     }
 
 }
